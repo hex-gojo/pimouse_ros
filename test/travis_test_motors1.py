@@ -3,7 +3,7 @@
 import unittest, rostest
 import rosnode, rospy
 import time
-from pimouse_ros.msg import Motorfreqs
+from pimouse_ros.msg import MotorFreqs
 from geometry_msgs.msg import Twist
 
 class MotorTest(unittest.TestCase):
@@ -23,6 +23,7 @@ class MotorTest(unittest.TestCase):
 		for i in range(10):
 			pub.publish(m)
 			time.sleep(0.1)
+
 		self.file_check("rtmotor_raw_l0", m.left_hz, "wrang left value from motor_raw")
 		self.file_check("rtmotor_raw_r0", m.right_hz, "wrang right value from motor_raw")
 
